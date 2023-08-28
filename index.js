@@ -80,33 +80,55 @@
 
 //TODO:<-----------Single level Middleware-------------->
 
-const express = require("express");
-const path = require("path");
-const reqFilter = require("./middleware");
-const app = express();
-const route = express.Router();
+// const express = require("express");
+// const path = require("path");
+// const reqFilter = require("./middleware");
+// const app = express();
+// const route = express.Router();
 
-route.use(reqFilter);
+// route.use(reqFilter);
 
-app.get("/", (req, res) => {
-  res.send("Welcome to root middleware");
-});
-app.get("/user", reqFilter, (req, res) => {
-  res.send("Welcome to user middleware");
-});
-app.get("/check", (req, res) => {
-  res.send("Welcome to check middleware");
-});
-app.get("/contact", (req, res) => {
-  res.send("Welcome to contact middleware");
-});
-route.get("/check1", (req, res) => {
-  res.send("Welcome to check1 middleware");
-});
-route.get("/check2", (req, res) => {
-  res.send("Welcome to check2 middleware");
-});
+// app.get("/", (req, res) => {
+//   res.send("Welcome to root middleware");
+// });
+// app.get("/user", reqFilter, (req, res) => {
+//   res.send("Welcome to user middleware");
+// });
+// app.get("/check", (req, res) => {
+//   res.send("Welcome to check middleware");
+// });
+// app.get("/contact", (req, res) => {
+//   res.send("Welcome to contact middleware");
+// });
+// route.get("/check1", (req, res) => {
+//   res.send("Welcome to check1 middleware");
+// });
+// route.get("/check2", (req, res) => {
+//   res.send("Welcome to check2 middleware");
+// });
 
-app.use("/", route);
+// app.use("/", route);
 
-app.listen(2000);
+// app.listen(2000);
+//TODO:<-----------Connect mongoDB with Node-------------->
+
+//imports the MongoClient class from the 'mongodb' package
+// const dbConnect = require("./mongoDb/mongodb");
+
+//1st way to call dbConnect
+// dbConnect();
+// console.log(dbConnect());
+// dbConnect().then((res) => {
+//   res
+//     .find()
+//     .toArray()
+//     .then((data) => console.log(data));
+// });
+
+//2nd way to call dbConnect
+// const main =async () => {
+//   let data =await dbConnect();
+//   data = await data.find().toArray();
+//   console.log(data);
+// }
+// main();
