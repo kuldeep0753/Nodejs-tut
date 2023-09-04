@@ -39,7 +39,7 @@ app.get("/array", (req, res) => {
   ]);
 });
 app.get("/input", (req, res) => {
-  res.send(`<label>Name:</label><input type="text" placeholder="Name" />`);
+  res.send(`<label>Name:</label><input type="text" placeholder="Name" value=${req.query.name}/>`);
 });
 app.get("/json", (req, res) => {
   res.send(`{ name: "Ksk", age: 24, email: "jksndc@gmail" } <a href="/">Home Page</a>`);

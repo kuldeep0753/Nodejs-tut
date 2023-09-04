@@ -1,0 +1,156 @@
+//TODO:CRUD operation in a file system in nodejs
+
+/** 1.Write in A File
+
+const fs = require('fs');
+
+fs.writeFile('example.txt', 'This is some content.', (err) => {
+  if (err) {
+    console.error('Error creating file:', err);
+  } else {
+    console.log('File created or updated.');
+  }
+});
+*/
+
+/** 2.Read from A File
+   const fs = require('fs');
+  fs.readFile('example.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading file:', err);
+  } else {
+    console.log('File contents:', data);
+  }
+});
+
+*/
+
+/** 3.Append in A File
+ const fs = require('fs');
+
+fs.appendFile( 'example.txt', '\nThis is new data to append to the file.', (err) => {
+  if (err) {
+    console.error('Error appending to file:', err);
+  } else {
+    console.log('Data appended to the file.');
+  }
+});
+*/
+
+/** 4.Delete A File
+
+const fs = require('fs');
+fs.unlink('example.txt', (err) => {
+  if (err) {
+    console.error('Error deleting file:', err);
+  } else {
+    console.log('File deleted.');
+  }
+});
+
+*/
+
+//TODO: How to create Server
+/** 
+const data =[ {
+    name: "Kuldeep",
+    Age:23
+},{
+    name: "sfsf",
+    Age:32
+},{
+    name: "Kulwedweddeep",
+    Age:45
+},{
+    name: "werewr",
+    Age:12
+},]
+
+const http = require("http");
+
+function request(req, res) {
+    res.writeHead(201, { 'Content-type': "application/json" });
+    res.write(JSON.stringify(data));
+    res.end();
+}
+const server = http.createServer(request);
+server.listen(2000);
+
+*/
+
+//TODO: HOE TO  SELECT CURRENT PATH
+// const path = require("path");
+// const publicPath = path.join(__dirname, "public");
+
+//TODO:
+/*
+    1.What is buffer ?
+    2.What is sync and async with practrical example using Promise?
+    3.How nodejs works ?
+    4.Waht is Promise,callback,async await,callstack,eventloop,V8 engine?
+    5.Differnce between nodejs and  browser?
+
+*/
+        
+//TODO: HOw to do routing with expressjs
+/**
+const express = require("express");
+
+const app = express();
+app.get("/", (req, res) => {
+  //requesting data from client
+  console.log("data sent by browser");
+  res.send(`<h1>HI its a root url</h1> <a href="/json">JSON DATA</a> <i>${req.query.name}</i>`);
+});
+app.get("/array", (req, res) => {
+  res.send([
+    23,
+    "sdfs,sdfsdf",
+    { name: "Ksk", age: 24, email: "jksndc@gmail" },
+  ]);
+});
+app.get("/input", (req, res) => {
+  res.send(`<label>Name:</label><input type="text" placeholder="Name" value=${req.query.name}/>`);
+});
+app.get("/json", (req, res) => {
+  res.send(`{ name: "Ksk", age: 24, email: "jksndc@gmail" } <a href="/">Home Page</a>`);
+});
+
+app.listen(2000);
+ */
+
+//TODO: Make HTML page
+
+// const express = require("express");
+// const path = require("path");
+// console.log("Checking current path--->",__dirname);
+
+// const app = express();
+// const publicPath = path.join(__dirname, 'public');
+// console.log(publicPath);
+
+// app.use(express.static(publicPath));
+// app.listen(2000);
+
+//-Without html extension
+
+app.get("/about", (req, res) => {
+  res.sendFile(`${publicPath}/about.html`);
+});
+
+app.get("/homepage", (req, res) => {
+  res.sendFile(`${publicPath}/home.html`);
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(`${publicPath}/notFound.html`);
+});
+//TODO: Installing mongodb
+/** 
+1.install mongoDb
+2.setup environment variable
+3.install mongosh from mongodb
+4.cut mongosh from (3) point and paste it into bin folder of(1) point
+5.open cmd and type mongosh
+
+*/

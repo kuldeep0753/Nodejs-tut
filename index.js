@@ -1,13 +1,13 @@
-// const express = require("express");
-// const path = require("path");
-// console.log("Checking current path--->",__dirname);
+const express = require("express");
+const path = require("path");
+console.log("Checking current path--->",__dirname);
 
-// const app = express();
-// const publicPath = path.join(__dirname, 'public');
-// console.log(publicPath);
+const app = express();
+const publicPath = path.join(__dirname, 'public');
+console.log(publicPath);
 
-// app.use(express.static(publicPath));
-// app.listen(2000);
+app.use(express.static(publicPath));
+app.listen(2000);
 
 //TODO:---------------REmove extension from URL-------->
 // const express = require("express");

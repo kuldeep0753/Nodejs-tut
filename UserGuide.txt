@@ -1,8 +1,0 @@
-Installing mongodb
-
-1.install
-2.setup environment variable
-3.install mongosh from mongodb
-4.cut mongosh from (3) point and paste it into bin folder of(1) point
-5.open cmd and type mongosh
-
